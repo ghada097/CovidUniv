@@ -1,28 +1,36 @@
-import { Router } from '@angular/router';
-import { AuthService } from './services/auth.service';
 import { Component, OnInit } from '@angular/core';
-
-
+import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  title = 'CovidUniv';
-  constructor (public authService: AuthService,private router: Router) {};
-  ngOnInit () {
-    let isloggedin: string;
-    let loggedUser:string;
-    isloggedin = localStorage.getItem('isloggedIn');
-    loggedUser = localStorage.getItem('loggedUser');
-    if (isloggedin!="true" || !loggedUser)
-    this.router.navigate(['/login']);
-    else
-    this.authService.setLoggedUserFromLocalStorage(loggedUser);
+export class AppComponent implements OnInit {
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showDecideurBoard = false;
+  username: string;
+
+  constructor(private tokenStorageService: TokenStorageService) { }
+
+  ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showDecideurBoard = this.roles.includes('ROLE_DECIDEUR');
+
+      this.username = user.username;
     }
-  onLogout(){
-    this.authService.logout();
+  }
+
+  logout(): void {
+    this.tokenStorageService.signOut();
+    window.location.reload();
   }
 }
