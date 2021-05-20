@@ -1,0 +1,71 @@
+
+<body style=" background-color: #1e1e2f98;">
+    <div class=" content" style="height: 600px;">
+          <div class=" card card-chart" style=" background-color: #2b2b42;">
+            <div class=" card-header">
+              <div class=" row">
+                <div class=" col-sm-6 text-left">  
+                    <div class="heading_main text_align_left">
+                    <h2 ><span class=" card-title" style=" color: cornsilk;">Test COVID sur le campus</span></h2>
+               
+                </div>
+                <div class="full">
+                <p style=" color: #c9c9c9;">Nous travaillons d'arrache-pied pour assurer la sécurité des étudiants et du personnel qui doivent être sur le campus. Vous pouvez désormais réserver deux tests COVID-19 asymptomatiques par semaine dans nos centres de test sur le campus.</p>
+</div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="full">
+                        <img class="img-responsive" src="../../assets/images/_115033548_gettyimages-1226314512.jpg" alt="#" />
+                    </div>
+                </div>
+              </div>
+              
+            </div>
+            <div [hidden]="submitted" >
+              <div class="section layout_padding contact_section" style=" background-color: #2b2b42;">
+                <h2 class=" title" style=" color: #fefeff;">
+                  Pour prendre un rendez-vous pour un test PCR en université, Veuillez remplir ce formulaire !   </h2>
+                <div class="container">
+                       <div class="row">
+
+                         <div class="col-lg-8 col-md-8 col-sm-8">
+                            <div class="full float-right_img">
+                                <img src="../../assets/images/img10.png" alt="#">
+                            </div>
+                         </div>
+                         <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="contact_form">
+                                <form id="contact-form" (ngSubmit)="onSubmit()">
+                                       <div class="full field">
+                                        <input  name="name" id="name" placeholder="Nom" type="text"required [(ngModel)]="testpcr.name">
+                                       </div>
+                                       <div class="full field">
+                                        <input name="email" id="email" placeholder="E-mail" type="email" required [(ngModel)]="testpcr.email">
+                                       </div>
+                                       <div class="full field">
+                                        <input  name="date" id="date" placeholder="Numéro de téléphone" required [(ngModel)]="testpcr.phone">
+                                       </div>
+                                      
+                                       <div class="text-right"><br>
+                                        <button class="btn btn-danger solid blank"  style="background-color: rgb(156, 20, 47);" type="submit">Envoyer</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                         </div>
+                       </div>			  
+                   </div>
+                </div>
+              </div>
+             
+</div>
+<br>
+<div [hidden]="!submitted">
+  <div class="succ">Vous avez soumis avec succès!</div>
+</div>
+</div>
+
+</body>
+
+

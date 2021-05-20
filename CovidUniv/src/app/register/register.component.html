@@ -1,0 +1,93 @@
+<body>
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 order-md-2">
+        <img src="../../assets/img/undraw_file_sync_ot38.png" alt="Image" class="img-fluid">
+      </div>
+      <div class="col-md-6 contents">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="mb-4">
+            <h3>S'inscrire <strong>CovidUniv</strong></h3>
+          </div>
+          <form  *ngIf="!isSuccessful"
+          name="form"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate>
+            <div class="form-group first">
+              <label for="username"></label>
+              <input type="text" style="font-size: 15px;" placeholder="Nom de l'utilisateur" class="form-control" name="username"
+              [(ngModel)]="form.username"
+              required
+              minlength="3"
+              maxlength="20"
+              #username="ngModel">
+              <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+                <div *ngIf="username.errors.required">Nom d'utilisateur est nécessaire</div>
+                <div *ngIf="username.errors.minlength">
+                  Le nom d'utilisateur doit comporter au moins 3 caractères
+                </div>
+                <div *ngIf="username.errors.maxlength">
+                  Le nom d'utilisateur doit comporter au maximum 20 caractères
+                </div>
+              </div>
+            </div>
+            <div class="form-group first">
+              <label for="email"></label>
+              <input 
+              type="email"
+              class="form-control"
+              name="email"
+              [(ngModel)]="form.email"
+              required
+              email
+              #email="ngModel"
+              style="font-size: 15px;"  placeholder="E-mail"
+            />
+            <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+              <div *ngIf="email.errors.required">E-mail est requis</div>
+              <div *ngIf="email.errors.email">
+                L'E-mail doit être une adresse e-mail valide
+              </div>
+            </div>
+          </div>
+            <div class="form-group last mb-4">
+              <label for="password"></label>
+              <input
+              type="password"
+              class="form-control"
+              name="password"
+              [(ngModel)]="form.password"
+              required
+              minlength="6"
+              #password="ngModel"
+              style="font-size: 15px;"  placeholder="Mot de passe"
+            />
+            </div>
+            <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+              <div *ngIf="password.errors.required"> Mot de passe requis</div>
+              <div *ngIf="password.errors.minlength">
+                Le mot de passe doit être au moins de 6 caractères
+              </div>
+            </div>
+            
+
+            <input type="submit" value="S'inscrire" class="btn text-white btn-block ">
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+              L'inscription a échoué!<br />{{ errorMessage }}
+            </div>
+          </form>
+          <div class="alert alert-success" *ngIf="isSuccessful">
+            Votre inscription est réussie!
+          </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  </div>
+</body>

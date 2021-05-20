@@ -1,0 +1,383 @@
+<body style=" background-color: #1e1e2f;">
+  <div class=" content" style="height: 600px;">
+    
+      <div class=" row">
+        <div class=" col-12">
+          <div class=" card card-chart" style=" background-color: #2b2b42;">
+            <div class=" card-header">
+              <div class=" row">
+                <div class=" col-sm-6 text-left">  
+                  <h2 class=" card-title" style=" color: cornsilk;">COVID-19 DHASHBOARD</h2>
+                
+                </div>
+                
+                <div class=" col-sm-6">
+                  <div
+                    class=" btn-group btn-group-toggle float-right"
+                    data-toggle="buttons">
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <div style="height: 30px;"></div>
+      <div class=" row">
+        <div class=" col-12">
+          <div class=" card card-chart" style=" background-color: #2b2b42;">
+            <div class=" card-header">
+              <div class=" row">
+                <div class=" col-sm-6 text-left">
+                  <h3 class=" card-category"  style=" color: cornsilk;">Cas Campus Manouba</h3>
+                  <h2 class=" card-title"  style=" color: cornsilk;">
+                    <i class=" fa fa-bolt text-info" style=" color: cornsilk;"> </i> {{somme_cas_campus}}</h2>
+                </div>
+                <div class=" col-sm-6">
+                  <div
+                    class=" btn-group btn-group-toggle float-right"
+                    data-toggle="buttons"
+                  >
+              
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" card-body">
+              <div class=" chart-area"><canvas id="chartBig1"> </canvas></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="height: 30px;"></div>
+
+      <div class=" row">
+        <div class=" col-lg-4">
+          <div class=" card card-chart" style=" background-color: #2b2b42;">
+            <div class=" card-header">
+              <h3 class=" card-category"  style=" color: cornsilk;">Décès Campus Manouba</h3>
+              <h3 class=" card-title"  style=" color: cornsilk;">
+                <i class="fa fa-heartbeat text-danger"  style=" color: cornsilk;"> </i> {{somme_decesCampus}}
+     
+              </h3>
+            </div>
+            <div class=" card-body">
+              <div class=" chart-area"><canvas id="chartLineRed"> </canvas></div>
+            </div>
+          </div>
+        </div>
+        <div class=" col-lg-4">
+          <div class=" card card-chart" style=" background-color: #2b2b42;">
+            <div class=" card-header">
+              <h3 class=" card-category" style=" color: cornsilk;">Cas ISAMM</h3>
+              <h3 class=" card-title" style=" color: cornsilk;">
+                <i class=" fa fa-bolt text-info" style=" color: cornsilk;"> </i> {{somme_cas_isamm}}
+               
+              </h3>
+            </div>
+            <div class=" card-body">
+              <div class=" chart-area"><canvas id="CountryChart"> </canvas></div>
+            </div>
+          </div>
+        </div>
+        <div class=" col-lg-4">
+          <div class=" card card-chart" style=" background-color: #2b2b42;">
+            <div class=" card-header">
+              <h3 class=" card-category" style=" color: cornsilk;">Guérisons ISAMM</h3>
+              <h3 class=" card-title" style=" color: cornsilk;">
+                <i class=" fa fa-heart text-success" style=" color: cornsilk;"> </i> {{somme_guerisons}}
+              </h3>
+            </div>
+            <div class=" card-body">
+              <div class=" chart-area"><canvas id="chartLineGreen"> </canvas></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="height: 30px;"></div>
+      <div class=" row">
+        <div class=" col-lg-6 col-md-12">
+          <div class=" card card-tasks"  style=" background-color: #2b2b42;">
+            <div class=" card-header"  style=" background-color: #2b2b42;">
+              <h6 class=" title d-inline" style=" color: cornsilk;">Tasks(5)</h6>
+              <p class=" card-category d-inline" style=" color: cornsilk;">today</p>
+              <div ngbDropdown>
+                <button
+                  class=" btn btn-link btn-icon"
+                  data-toggle="dropdown"
+                  ngbDropdownToggle
+                  type="button"
+                >
+                  <i class=" tim-icons icon-settings-gear-63"> </i>
+                </button>
+                <div
+                  aria-labelledby="dropdownMenuLink"
+                  class=" dropdown-menu-right"
+                  ngbDropdownMenu
+                >
+                  <a href="javascript:void(0)" ngbDropdownItem style=" color: cornsilk;"> Action </a>
+                  <a href="javascript:void(0)" ngbDropdownItem style=" color: cornsilk;"> Another action </a>
+                  <a href="javascript:void(0)" ngbDropdownItem style=" color: cornsilk;"> Something else </a>
+                </div>
+              </div>
+            </div>
+            <div class=" card-body">
+              <div class=" table-full-width table-responsive">
+                <table class=" table">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class=" form-check">
+                          <label class=" form-check-label">
+                            <input
+                              class=" form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+    
+                            <span class=" form-check-sign">
+                              <span class=" check"> </span>
+                            </span>
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <p class=" title" style=" color: cornsilk;">Update the Documentation</p>
+                        <p class=" text-muted" style=" color: cornsilk;">
+                          Dwuamish Head, Seattle, WA 8:47 AM
+                        </p>
+                      </td>
+                      <td class=" td-actions text-right">
+                        <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                          <i class=" tim-icons icon-pencil"> </i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class=" form-check">
+                          <label class=" form-check-label">
+                            <input
+                              checked=""
+                              class=" form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+    
+                            <span class=" form-check-sign">
+                              <span class=" check"> </span>
+                            </span>
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <p class=" title" style=" color: cornsilk;">GDPR Compliance</p>
+                        <p class=" text-muted" style=" color: cornsilk;">
+                          The GDPR is a regulation that requires businesses to
+                          protect the personal data and privacy of Europe citizens
+                          for transactions that occur within EU member states.
+                        </p>
+                      </td>
+                      <td class=" td-actions text-right">
+                        <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                          <i class=" tim-icons icon-pencil"> </i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class=" form-check">
+                          <label class=" form-check-label">
+                            <input
+                              class=" form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+    
+                            <span class=" form-check-sign">
+                              <span class=" check"> </span>
+                            </span>
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <p class=" title" style=" color: cornsilk;">Solve the issues</p>
+                        <p class=" text-muted" style=" color: cornsilk;">
+                          Fifty percent of all respondents said they would be more
+                          likely to shop at a company
+                        </p>
+                      </td>
+                      <td class=" td-actions text-right">
+                        <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                          <i class=" tim-icons icon-pencil"> </i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class=" form-check">
+                          <label class=" form-check-label">
+                            <input
+                              class=" form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+    
+                            <span class=" form-check-sign">
+                              <span class=" check"> </span>
+                            </span>
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <p class=" title" style=" color: cornsilk;">Release v2.0.0</p>
+                        <p class=" text-muted" style=" color: cornsilk;">
+                          Ra Ave SW, Seattle, WA 98116, SUA 11:19 AM
+                        </p>
+                      </td>
+                      <td class=" td-actions text-right">
+                        <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body"  >
+                          <i class=" tim-icons icon-pencil"> </i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class=" form-check">
+                          <label class=" form-check-label">
+                            <input
+                              class=" form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+    
+                            <span class=" form-check-sign">
+                              <span class=" check"> </span>
+                            </span>
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <p class=" title" style=" color: cornsilk;">Export the processed files</p>
+                        <p class=" text-muted" style=" color: cornsilk;">
+                          The report also shows that consumers will not easily
+                          forgive a company once a breach exposing their personal
+                          data occurs.
+                        </p>
+                      </td>
+                      <td class=" td-actions text-right">
+                        <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                          <i class=" tim-icons icon-pencil"> </i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class=" form-check">
+                          <label class=" form-check-label">
+                            <input
+                              class=" form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+    
+                            <span class=" form-check-sign">
+                              <span class=" check"> </span>
+                            </span>
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <p class=" title" style=" color: cornsilk;">Arival at export process</p>
+                        <p class=" text-muted" style=" color: cornsilk;">
+                          Capitol Hill, Seattle, WA 12:34 AM
+                        </p>
+                      </td>
+                      <td class=" td-actions text-right">
+                        <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                          <i class=" tim-icons icon-pencil"> </i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" col-lg-6 col-md-12">
+          <div class=" card"  style=" background-color: #2b2b42;">
+            <div class=" card-header"  style=" background-color: #2b2b42;">
+              <h4 class=" card-title" style=" color: cornsilk;">Simple Table</h4>
+            </div>
+            <div class=" card-body"  style=" background-color: #2b2b42;">
+              <div class=" table-responsive">
+                <table class=" table tablesorter" id="">
+                  <thead class=" text-primary">
+                    <tr>
+                      <th style=" color: cornsilk;">Name</th>
+                      <th style=" color: cornsilk;">Country</th>
+                      <th style=" color: cornsilk;">City</th>
+                      <th  style=" color: cornsilk;" class=" text-center">Salary</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style=" color: cornsilk;" >Dakota Rice</td>
+                      <td style=" color: cornsilk;">Niger</td>
+                      <td style=" color: cornsilk;">Oud-Turnhout</td>
+                      <td style=" color: cornsilk;" class=" text-center">$36,738</td>
+                    </tr>
+                    <tr>
+                      <td style=" color: cornsilk;">Minerva Hooper</td>
+                      <td style=" color: cornsilk;">CuraÃ§ao</td>
+                      <td style=" color: cornsilk;">Sinaai-Waas</td>
+                      <td  style=" color: cornsilk;" class=" text-center">$23,789</td>
+                    </tr>
+                    <tr>
+                      <td style=" color: cornsilk;">Sage Rodriguez</td>
+                      <td style=" color: cornsilk;">Netherlands</td>
+                      <td style=" color: cornsilk;">Baileux</td>
+                      <td style=" color: cornsilk;" class=" text-center">$56,142</td>
+                    </tr>
+                    <tr>
+                      <td style=" color: cornsilk;"> Philip Chaney</td>
+                      <td style=" color: cornsilk;">Korea, South</td>
+                      <td style=" color: cornsilk;">Overland Park</td>
+                      <td  style=" color: cornsilk;" class=" text-center">$38,735</td>
+                    </tr>
+                    <tr>
+                      <td style=" color: cornsilk;">Doris Greene</td>
+                      <td style=" color: cornsilk;">Malawi</td>
+                      <td style=" color: cornsilk;">Feldkirchen in KÃ¤rnten</td>
+                      <td  style=" color: cornsilk;" class=" text-center">$63,542</td>
+                    </tr>
+                    <tr>
+                      <td style=" color: cornsilk;">Mason Porter</td>
+                      <td style=" color: cornsilk;">Chile</td>
+                      <td style=" color: cornsilk;">Gloucester</td>
+                      <td style=" color: cornsilk;" class=" text-center">$78,615</td>
+                    </tr>
+                    <tr>
+                      <td style=" color: cornsilk;">Jon Porter</td>
+                      <td style=" color: cornsilk;">Portugal</td>
+                      <td style=" color: cornsilk;">Gloucester</td>
+                      <td  style=" color: cornsilk;" class=" text-center">$98,615</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+        
+      </div>
+
+ 
+  </body>
+  

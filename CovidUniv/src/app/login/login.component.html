@@ -1,0 +1,75 @@
+<body>
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 order-md-2">
+        <img src="../../assets/img/undraw_file_sync_ot38.png" alt="Image" class="img-fluid">
+      </div>
+      <div class="col-md-6 contents">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="mb-4">
+            <h3>Connexion <strong>CovidUniv</strong></h3>
+          </div>
+          <form *ngIf="!isLoggedIn"
+          name="form"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate>
+            <div class="form-group first">
+              <label for="username" ></label>
+              <input type="text"  style="font-size: 15px;" placeholder="Nom de l'utilisateur" class="form-control" name="username"
+              [(ngModel)]="form.username"
+              required
+              #username="ngModel">
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="f.submitted && username.invalid">
+        Nom d'utilisateur est nécessaire!
+        </div>
+            <div class="form-group last mb-4">
+              <label for="password"></label>
+              <input type="password"  style="font-size: 15px;"  placeholder="Mot de passe" class="form-control" name="password"
+              [(ngModel)]="form.password"
+              required
+              minlength="6"
+              #password="ngModel">  
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
+          <div *ngIf="password.errors.required">Le mot de passe est requis</div>
+          <div *ngIf="password.errors.minlength">
+            Le mot de passe doit être au moins de 6 caractères
+          </div>
+        </div>
+            <div class="d-flex mb-5 align-items-center">
+              <label class="control control--checkbox mb-0"><span class="caption">Mot de passe oublié</span>
+                <input type="checkbox" checked="checked"/>
+                <div class="control__indicator"></div>
+              </label>
+            </div>
+
+            <input type="submit" value="Connexion" class="btn text-white btn-block ">
+            <div class="form-group">
+              <div
+                class="alert alert-danger"
+                role="alert"
+                *ngIf="f.submitted && isLoginFailed"
+              >
+              Échec de la connexion: {{ errorMessage }}
+              </div>
+            </div>
+          </form>
+          <div class="alert alert-success" *ngIf="isLoggedIn">
+            Connecté en tant que {{ roles }}.
+          </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  </div>
+</body>
+
+
+

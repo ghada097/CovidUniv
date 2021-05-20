@@ -1,0 +1,47 @@
+
+
+<div class="container" *ngIf="currentUser; else loggedOut">
+  <div class="gap-60"></div>
+    
+          <div class="wrap-contact100">
+              
+        
+            <span class="contact100-form-title">
+              Modifier le user
+            </span>
+            <form (ngSubmit)="onSubmit()" class="contact100-form validate-form">
+              <div class="wrap-input100 rs1-wrap-input100 validate-input">
+                <label class="label-input100" for="name">Nom</label>
+                <input class="input100" type="text"  id="name"   required [(ngModel)]="user.username" name="name">
+              </div>
+              <div class="wrap-input100 rs1-wrap-input100 validate-input">
+                <label class="label-input100" for="description">email</label>
+                <input  class="input100" type="text"  id="description"   required [(ngModel)]="user.email" name="description">
+              </div>
+              
+             
+  
+  
+             
+  
+              <div class="container-contact100-form-btn">
+                <div class="wrap-contact100-form-btn">
+                  <div class="contact100-form-bgbtn"></div>
+                  <button type="submit" class="contact100-form-btn">Submit</button>
+                </div>
+               
+              </div>
+            </form>
+        
+       
+          
+           
+        
+          </div>
+</div>
+<ng-template #loggedOut>
+    Veuillez vous connecter.
+  </ng-template>
+      
+    
+   

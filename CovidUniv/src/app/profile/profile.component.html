@@ -1,0 +1,97 @@
+
+
+<div class=" content" *ngIf="currentUser; else loggedOut">
+  <div class=" row" >
+    <div class=" col-md-8" >
+      <div class=" card" style=" background-color: #2b2b42;">
+        <div class=" card-header"><h5 class=" title" style=" color: #fefeff;">Edit Profile</h5></div>
+        <div class=" card-body" style=" background-color: #2b2b42;">
+          <form >
+            <div class=" row" >
+              <div class=" col-md-3 px-md-1"  style=" background-color: #2b2b42;">
+                <div class=" form-group">
+                  <label   style=" color: #c9c9c9;"> Username  </label>
+                  <input
+                    class=" form-control"
+                    placeholder="Username"
+                    type="text"
+                    value="{{ currentUser.username }}" style=" background-color: #2b2b42;"
+                  />
+                </div>
+              </div>
+              <div class=" col-md-4 pl-md-1">
+                <div class=" form-group">
+                  <label style=" color: #c9c9c9;" for="exampleInputEmail1"> Email address </label>
+                  <input
+                    class=" form-control"
+                    placeholder="{{ currentUser.email }}" style=" background-color: #2b2b42;"
+                    type="email" 
+                  />
+                </div>
+              </div>
+              <div class=" col-md-4 pl-md-1">
+                <div class=" form-group">
+                  <label style=" color: #c9c9c9;"   > Rôle </label>
+                  <input
+                    class=" form-control" *ngFor="let role of currentUser.roles" 
+                    placeholder="{{ role }}" style=" background-color: #2b2b42;"
+                    type="text" 
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class=" col-md-4" >
+      <div class=" card card-user"  style=" background-color: #2b2b42;">
+        <div class=" card-body"  style=" background-color: #2b2b42;">
+          <p class=" card-text"></p>
+          <div class=" author">
+            <div class=" block block-one"></div>
+            <div class=" block block-two"></div>
+            <div class=" block block-three"></div>
+            <div class=" block block-four"></div>
+            <a href="javascript:void(0)">
+              <img alt="..." class=" avatar" src="assets/img/emilyz.jpg" />
+            </a>
+            <div style="height: 20px;"></div>
+            <div class=" card-description text-center" style=" color: #c9c9c9;" >
+              Token:
+              {{ currentUser.accessToken.substring(0, 20) }} ...
+              {{ currentUser.accessToken.substr(currentUser.accessToken.length - 20) }}
+            </div>
+            <div style="height: 100px;"></div>
+          </div>
+
+        </div>
+        <div class=" card-footer">
+          <div class=" button-container">
+            <button
+              class=" btn btn-icon btn-round btn-facebook"
+              href="javascript:void(0)"
+            >
+              <i class=" fab fa-facebook"> </i>
+            </button>
+            <button
+              class=" btn btn-icon btn-round btn-twitter"
+              href="javascript:void(0)"
+            >
+              <i class=" fab fa-twitter"> </i>
+            </button>
+            <button
+              class=" btn btn-icon btn-round btn-google"
+              href="javascript:void(0)"
+            >
+              <i class=" fab fa-google-plus"> </i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loggedOut>
+  Veuillez vous connecter.
+</ng-template>
